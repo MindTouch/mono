@@ -166,7 +166,7 @@ namespace System.Net.Sockets
 					 * turning on or off PMTU
 					 * discovery...
 					 */
-					this.DontFragment = false;
+					this.DontFragment = true;
 				}
 
 				//
