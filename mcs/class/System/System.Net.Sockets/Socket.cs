@@ -159,14 +159,8 @@ namespace System.Net.Sockets
 			try {
 				if (address_family == AddressFamily.InterNetwork /* Need to test IPv6 further ||
 										   address_family == AddressFamily.InterNetworkV6 */) {
-					/* This is the default, but it
-					 * probably has nasty side
-					 * effects on Linux, as the
-					 * socket option is kludged by
-					 * turning on or off PMTU
-					 * discovery...
-					 */
-					this.DontFragment = true;
+                                        // This is the default on MS .NET
+					this.DontFragment = protocol_type == ProtocolType.Tcp;
 				}
 
 				//
